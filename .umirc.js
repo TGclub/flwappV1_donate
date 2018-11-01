@@ -1,8 +1,7 @@
-
-// ref: https://umijs.org/config/
 export default {
+  runtimePublicPath: true,
+  // publicPath: 'http://cdn.helloyzy.cn/images/',
   plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
       dva: false,
@@ -15,5 +14,6 @@ export default {
       },
       hardSource: false,
     }],
+    ['./src/plugins/vw/index.js', {}]
   ],
 }
