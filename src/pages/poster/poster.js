@@ -1,17 +1,19 @@
-import styles from './index.less';
+import './index.less';
 import React from 'react';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
+
+// TODO:引入html2canvas导致umi脚手架编译失败
 
 export default class Poster extends React.Component {
   componentDidMount() {
-    setTimeout(() => {
-      this.convertCanvasToImage('#target', html2canvas, (canvas) => {
-        this.setState({
-          isFinish: true,
-          url: canvas.toDataURL(),
-        })
-      });
-    }, 0)
+    // setTimeout(() => {
+    //   this.convertCanvasToImage('#target', html2canvas, (canvas) => {
+    //     this.setState({
+    //       isFinish: true,
+    //       url: canvas.toDataURL(),
+    //     })
+    //   });
+    // }, 0)
   }
   constructor() {
     super();
@@ -65,11 +67,11 @@ export default class Poster extends React.Component {
       {
         !isFinish ?
         <div id="target">
-        <img src="/static/post2.jpeg" className={styles.canvas} alt="banner" />
-          <p className={styles.name}>{name}</p>
+        <img src="/static/post2.jpeg" className="canvas" alt="banner" />
+          <p className="name">{name}</p>
         </div>
         :
-        <img src={url} className={styles.pic} alt=""/>
+        <img src={url} className="pic" alt=""/>
       }
       </div>
     )

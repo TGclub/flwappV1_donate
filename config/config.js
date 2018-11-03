@@ -1,6 +1,7 @@
 export default {
   // runtimePublicPath: true,
   // publicPath: 'http://cdn.helloyzy.cn/images/',
+  disableCSSModules: true,
   routes: [{
       path: '/poster',
       component: './poster/poster.js'
