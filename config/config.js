@@ -1,6 +1,15 @@
 export default {
-  runtimePublicPath: true,
+  // runtimePublicPath: true,
   // publicPath: 'http://cdn.helloyzy.cn/images/',
+  routes: [{
+      path: '/poster',
+      component: './poster/poster.js'
+    },
+    {
+      path: '/donate',
+      component: './donate/donate.js'
+    }
+  ],
   plugins: [
     ['umi-plugin-react', {
       antd: true,

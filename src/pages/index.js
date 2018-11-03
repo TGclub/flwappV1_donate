@@ -16,7 +16,7 @@ export default class Index extends React.Component {
     // const {url, isShowCanvas, name, isShowSecond} = this.state
     return (
       <div>
-        <Poster/>
+        Hello This Is Index
       </div>
     );
   }
