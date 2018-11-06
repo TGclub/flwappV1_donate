@@ -2,13 +2,16 @@ export default {
   // runtimePublicPath: true,
   // publicPath: 'http://cdn.helloyzy.cn/images/',
   disableCSSModules: true,
+  exportStatic: {
+    htmlSuffix: true,
+  },
   routes: [{
       path: '/poster',
-      component: './poster/poster.js'
+      component: './poster'
     },
     {
       path: '/donate',
-      component: './donate/donate.js'
+      component: './donate'
     }
   ],
   plugins: [
@@ -24,6 +27,11 @@ export default {
       },
       hardSource: false,
     }],
-    ['./src/plugins/vw/index.js', {}]
+    // 屏幕自适应
+    ['./src/plugins/vw/index.js', {}],
+    // 编译后hook
+    ['./src/plugins/onBuildSuccess/index.js', {}],
+    // 注入wxBridge
+    ['./src/plugins/wxJSBridge.js', {}],
   ],
 }

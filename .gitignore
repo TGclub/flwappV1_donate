@@ -17,5 +17,8 @@
 .umi
 .umi-production
 
-# secret confi
+# secret config
 /config/default.js
+
+# static files
+/static
