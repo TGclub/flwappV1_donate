@@ -1,24 +1,36 @@
 import './index.less';
 import React from 'react';
-// import html2canvas from 'html2canvas';
-
-// TODO:引入html2canvas导致umi脚手架编译失败
-
+import html2canvas from 'html2canvas';
+import qs from 'qs';
 export default class Poster extends React.Component {
+  getQueryString = (name) => {
+    const paramObj = qs.parse(window.location.search.replace(/\?/,''));
+    return paramObj[name] ? paramObj[name] : null
+  }
   componentDidMount() {
-    // setTimeout(() => {
-    //   this.convertCanvasToImage('#target', html2canvas, (canvas) => {
-    //     this.setState({
-    //       isFinish: true,
-    //       url: canvas.toDataURL(),
-    //     })
-    //   });
-    // }, 0)
+    const donateName = this.getQueryString('name');
+    console.log(donateName)
+    if (!donateName) {
+      alert('捐赠信息校验失败！')
+      window.close();
+    }
+    this.setState({
+      name: donateName
+    }, ()=>{
+      setTimeout(() => {
+        this.convertCanvasToImage('#target', html2canvas, (canvas) => {
+          this.setState({
+            isFinish: true,
+            url: canvas.toDataURL(),
+          })
+        });
+      }, 0)
+    });
   }
   constructor() {
     super();
     this.state = {
-      name: '小海鲸',
+      name: '',
       year: '',
       month: '',
       day: '',
