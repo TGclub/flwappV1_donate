@@ -29,8 +29,38 @@
   font-family:"Times New Roman",Georgia,Serif
 }
 
-.year{}
+.month,.year, .day {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-size:.12rem;
+  text-align: center;
+  color: black;
+  font-family:"Times New Roman",Georgia,Serif
+}
+.year{
+  bottom: 1.26rem;
+  left: 3.25rem;
+}
 
-.month{}
+.month{
+  bottom: 1.26rem;
+  left: 3.75rem;
+}
 
-.day{}
+.day{
+  bottom: 1.26rem;
+  left: 4.15rem;
+}
+
+.ReactModal__Overlay, .ReactModal__Overlay--after-open {
+  background: transparent!important;
+}
+
+.hint {
+  margin-top: 8rem;
+  text-align: center;
+  font-size: .4rem;
+  letter-spacing: .1rem;
+  color: #ff8b8b;
+}
